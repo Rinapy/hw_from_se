@@ -78,12 +78,13 @@ def one_9(x: int) -> int:
     print(abs(x) + x ** 5)
 
 
-def one_10(x: int) -> None:
+def one_10(*args) -> None:
     """Задание 10 лабараторной №1."""
     print(one_10.__doc__)
-    result = (x + 1) ** 2 + 3 * (x + 1)
-    print(f'При x = {x}\n'
-          f'x = {result:.2f}')
+    for x in args:
+        result = (x + 1) ** 2 + 3 * (x + 1)
+        print(f'При x = {x}\n'
+              f'x = {result:.2f}')
 
 
 def main():
@@ -117,8 +118,7 @@ def main():
     print(line)
 
     x_list = [1.7, 3]
-    for x in x_list:
-        one_10(x)
+    one_10(*x_list)
     print(line)
 
 
